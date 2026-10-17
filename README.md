@@ -12,6 +12,17 @@ pip install jarvis-c2rust
 
 依赖要求：Python 3.12，运行时依赖 `jarvis-ai-assistant>=7.0.1`（提供 Agent、CodeAgent、配置与输出等基础能力）。
 
+C/C++ 扫描依赖 libclang（Python 绑定 `clang` 16-22）。按需安装对应版本：
+
+```bash
+# 例如 clang 18
+pip install "jarvis-c2rust[clang18]"
+# 或直接
+pip install "clang>=16,<23"
+```
+
+同时需确保系统已安装 libclang（如 `apt install llvm-18 clang-18 libclang-18-dev`），或设置 `LIBCLANG_PATH` / `LLVM_HOME` 指向 libclang 所在目录。
+
 ## 使用
 
 ```bash

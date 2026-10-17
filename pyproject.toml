@@ -21,6 +21,9 @@ keywords = ["jarvis", "c2rust", "rust", "migration", "transpiler"]
 dependencies = [
     "jarvis-ai-assistant>=7.0.1",
     "typer",
+    "tree-sitter==0.25.2; platform_machine != 'armv6l' and platform_machine != 'armv7l' and platform_machine != 'armv8l' and platform_machine != 'armhf'",
+    "tree-sitter-c==0.24.1; platform_machine != 'armv6l' and platform_machine != 'armv7l' and platform_machine != 'armv8l' and platform_machine != 'armhf'",
+    "tree-sitter-cpp==0.23.4; platform_machine != 'armv6l' and platform_machine != 'armv7l' and platform_machine != 'armv8l' and platform_machine != 'armhf'",
 ]
 
 [project.optional-dependencies]
@@ -31,6 +34,12 @@ dev = [
     "build",
     "twine",
 ]
+clang16 = ["clang==16.*"]
+clang17 = ["clang==17.*"]
+clang18 = ["clang==18.*"]
+clang19 = ["clang==19.*"]
+clang20 = ["clang==20.*"]
+clang21 = ["clang==21.*"]
 
 [project.scripts]
 jarvis-c2rust = "jarvis.jarvis_c2rust.cli:main"
