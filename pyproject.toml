@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jarvis-c2rust"
+version = "0.1.0"
+description = "Jarvis C2Rust: C/C++ to Rust migration pipeline with progressive migration and checkpoint resume"
+readme = "README.md"
+authors = [{ name = "skyfire", email = "skyfireitdiy@hotmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+keywords = ["jarvis", "c2rust", "rust", "migration", "transpiler"]
+dependencies = [
+    "jarvis-ai-assistant>=7.0.1",
+    "typer",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "build",
+    "twine",
+]
+
+[project.scripts]
+jarvis-c2rust = "jarvis.jarvis_c2rust.cli:main"
+jc2r = "jarvis.jarvis_c2rust.cli:main"
+
+[tool.setuptools]
+packages = ["jarvis.jarvis_c2rust"]
+package-dir = { "" = "src" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
